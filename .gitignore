@@ -1,8 +1,10 @@
+.DS_Store
+Thumbs.db
+
 terraform.*
 .repo/
 components/
 .semverbot.toml
-.golangci.yaml
 
 .idea
 !examples/*.tfvars
@@ -41,7 +43,6 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 provider.tf
-!examples/complete/provider.tf
 
 # Include override files you do wish to add to version control using negated pattern
 # !example_override.tf
@@ -57,8 +58,5 @@ terraform.rc
 azure_env.sh
 .releaserc.json
 
-
 # VS Code
 .vscode/
-
-local_code_review.md
