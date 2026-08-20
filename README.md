@@ -11,7 +11,8 @@ Terraform primitive module for the [`aws_sqs_queue_redrive_policy`](https://regi
 
 ```hcl
 module "sqs_queue_redrive_policy" {
-  source = "path/to/module"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/sqs_queue_redrive_policy/aws"
+  version = "~> 1.0"
 
   queue_url = aws_sqs_queue.main.url
   redrive_policy = jsonencode({
@@ -22,14 +23,6 @@ module "sqs_queue_redrive_policy" {
 ```
 
 See [`examples/complete`](./examples/complete) for a full example with customer-managed KMS encryption on the queues.
-
-## Development
-
-- Run `make configure` to sync shared automation components (requires [repo](https://gerrit.googlesource.com/git-repo/) and git identity).
-- Override Makefile variables via [`.lcafenv`](./.lcafenv) if needed.
-- Post-deploy tests live under [`tests/`](./tests) and target `examples/complete` with `test.tfvars`.
-
-Pull request checks use [launch-workflows](https://github.com/launchbynttdata/launch-workflows/tree/main/docs) reusable workflows; configure AWS OIDC secrets and variables for your organization if you run them outside `launchbynttdata`.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
